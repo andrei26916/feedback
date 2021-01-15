@@ -13,13 +13,16 @@ class CreateFeedbacksTable extends Migration
      */
     public function up()
     {
-        Schema::create('feedbacks', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->string('text');
-            $table->timestamps();
-        });
+        Schema::create(
+            'feedbacks',
+            function (Blueprint $table) {
+                $table->id();
+                $table->bigInteger('user_id')->unsigned();
+                $table->foreign('user_id')->references('id')->on('users');
+                $table->string('text');
+                $table->timestamps();
+            }
+        );
     }
 
     /**

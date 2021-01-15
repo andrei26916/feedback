@@ -32,9 +32,11 @@ class FeedbackController extends Controller
      */
     public function create(Request $request)
     {
-        return $this->feedbackServices->add([
-            'text' => $request->text
-        ]);
+        return $this->feedbackServices->add(
+            [
+                'text' => $request->text
+            ]
+        );
     }
 
     /**
@@ -42,10 +44,12 @@ class FeedbackController extends Controller
      */
     public function update(Request $request)
     {
-        return $this->feedbackServices->edit([
-            'id' => $request->id,
-            'text' => $request->text
-        ]);
+        return $this->feedbackServices->edit(
+            [
+                'id' => $request->id,
+                'text' => $request->text
+            ]
+        );
     }
 
 
@@ -55,8 +59,10 @@ class FeedbackController extends Controller
      */
     public function delete(Request $request)
     {
-        return $this->feedbackServices->delete([
-            'id' => $request->id
-        ]);
+        return $this->feedbackServices->delete(
+            [
+                'id' => $request->id
+            ]
+        );
     }
 }
